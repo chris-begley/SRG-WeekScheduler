@@ -1,0 +1,22 @@
+﻿/* 
+    DragDrop.css
+*/
+
+.html5{
+    width: 25%;
+    min-height:6.5em;
+    margin: 1rem, 0, 0, 1rem;
+    background-color: green;
+    color: white;
+    border-radius: 0.75em;
+    padding: 4%;
+    touch-action: none;
+    user-select: none;
+}
+
+.dropTgt {
+    width: 30%;
+    min-height: 7em;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}

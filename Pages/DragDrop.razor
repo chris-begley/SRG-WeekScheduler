@@ -1,0 +1,40 @@
+﻿@page "/drag-and-drop"
+@inject IJSRuntime JSRuntime
+<script src="~/MyJavaScript.js"></script>
+
+<PageTitle>Drag and Drop</PageTitle>
+<h3>Drag and Drop</h3>
+
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+
+<!--
+<div draggable="true">
+    <div class="html5">html5</div>
+</div>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+-->
+Welcome to your new app.
+
+<div id="dragme" draggable="true" class="html5" ondragstart="drag(event)">DragMe!</div>
+<br />
+<div id="dropMe" class="dropTgt" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+@code{
+
+}

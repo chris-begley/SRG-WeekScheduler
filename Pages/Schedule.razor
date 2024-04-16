@@ -1,0 +1,62 @@
+﻿@page "/scheduler"
+
+
+<h3>Schedule</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Time / Day</th>
+            @foreach (var day in Enum.GetValues(typeof(DayOfWeek)))
+            {
+                <th>@day</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for (int hour = 9; hour <= 17; hour++) // Assuming work hours from 9 to 17
+        {
+            <tr>
+                <td>@hour:00</td>
+                @foreach (var day in Enum.GetValues(typeof(DayOfWeek)))
+                {
+                    <td></td> <!-- Empty cell for each day/hour slot -->
+                }
+            </tr>
+            <tr>
+                <td>@hour:15</td>
+                @foreach (var day in Enum.GetValues(typeof(DayOfWeek)))
+                {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td>@hour:30</td>
+                @foreach (var day in Enum.GetValues(typeof(DayOfWeek)))
+                {
+                    <td></td>
+                }
+            </tr>
+            <tr>
+                <td>@hour:45</td>
+                @foreach (var day in Enum.GetValues(typeof(DayOfWeek)))
+                {
+                    <td></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    // Enum for days of the week for demonstration purposes
+    // In a real-world scenario, you might want to exclude weekends
+    public enum DayOfWeek
+    {
+        Monday, Tuesday, Wednesday, Thursday, Friday //, Saturday, Sunday
+    }
+}
+
+@code {
+
+}
